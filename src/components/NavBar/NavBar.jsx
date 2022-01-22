@@ -17,7 +17,7 @@ const NavBar = () => {
                     src="assets/images/logo.png"
                     width="30"
                     height="30"
-                    className="d-inline-block align-top"
+                    className="d-inline-block align-top w-25"
                     />{' '}
                 MundoCanino
                 </Navbar.Brand>
@@ -33,9 +33,9 @@ const NavBar = () => {
                     <Nav.Link href="#action3">ENTRETENIMIENTO</Nav.Link>
                     <Nav.Link href="#action4">ACCESORIOS</Nav.Link>
                 </Nav>
-                <CartWidget />
                 </Navbar.Collapse>
             </Container>
+            <CartWidget />
         </Navbar>
     )
 }
