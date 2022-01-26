@@ -1,16 +1,10 @@
-import ItemCount from "../ItemCount"
+import ItemList from "./ItemList"
 
 function ItemListContainer() {
-
-    function onAdd(cant) {
-      console.log(cant)
-    }
-    
     return (
         <div id='saludo'>
             Bienvenido a MundoCanino!
-
-            <ItemCount stock={10} initial={1} onAdd={onAdd} />
+            <ItemList />
         </div>
     )
 }
