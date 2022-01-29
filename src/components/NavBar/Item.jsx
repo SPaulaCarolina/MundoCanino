@@ -1,22 +1,24 @@
 import ItemCount from "../ItemCount";
 
 
-const Item = (productos) => {
+const Item = ({key,nombre,precio,imag,categoria}) => {
     function onAdd(cant) {
         console.log(cant)
-      }
+    }
+
     return (
+        
         <div 
-            key={productos.id} 
+            key={key}
             className='col-md-4'
         >                        
             <div className="card w-100 mt-5" >
                 <div className="card-header">
-                    {`${productos.nombre} - ${productos.categoria}`}
+                    {`${nombre} - ${categoria}`}
                 </div>
                 <div className="card-body">
-                    <img src={productos.foto} alt='' className='w-50' />
-                    {productos.precio}                                                            
+                    <img src={imag} alt='' className='w-50' />
+                    {precio}                                                            
                 </div>
                 <div className="card-footer">
                     <button className="btn btn-outline-primary btn-block">

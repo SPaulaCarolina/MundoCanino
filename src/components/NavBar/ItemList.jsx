@@ -1,22 +1,16 @@
-import { useEffect, useState } from "react"
-import { getFetch } from "../helpers/mock"
 import Item from "./Item";
 
-const ItemList = () => {
-    const [productos, setProductos] = useState ([])
-    const [loading, setloading] = useState(true)
-    
-    useEffect(() => {
-        getFetch
-        .then(res => setProductos(res))
-        .catch(err => console.log(err))
-        .finally(()=> setloading(false))      
-    }, [])
+const ItemList = ({list}) => {
     
     return (
         <div>
-            { loading ? <h2>LOADING...</h2> : 
-                productos.map((prod) => <Item prod= {prod} />)
+            {list.map((items) => <Item 
+                    key={items.id} 
+                    nombre={items.nombre} 
+                    precio={items.precio} 
+                    imag={items.foto} 
+                    categoria={items.categoria}
+                    />)
             }          
         </div>
     )
