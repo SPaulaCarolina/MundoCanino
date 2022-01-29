@@ -1,11 +1,12 @@
-const ItemDetail = (producto) => {
-   
+const ItemDetail = ({product}) => {
+  const { nombre, id, categoria, foto, precio } = product;
+
     return (
       <>
-        <h1>{producto.nombre}</h1>
-        <h4>Id: {producto.id} Categoria: {producto.categoria}</h4>
-        <h4>Precio: {producto.precio}</h4>
-        <img src= {producto.foto} />
+        <h1>Producto: {nombre}</h1>
+        <h4>Id: {id} Categoria: {categoria}</h4>
+        <h4>Precio: {precio}</h4>
+        <img src= {foto} alt="foto" />
       </>
     );
 }

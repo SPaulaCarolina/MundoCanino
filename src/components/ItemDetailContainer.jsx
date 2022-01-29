@@ -3,22 +3,22 @@ import getProducts from './helpers/getProducts.js'
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState([])
-    const productoId = 1;
+    const [product, setProduct] = useState([])
+    const productId = 1;
 
     useEffect(() => {             
         getProducts()
         .then((data) => {
-            setProducto(data.find((prod) => prod.id === productoId));
-            })
-            .catch(err => console.log(err));      
-    }, []);  
+        setProduct(data.find((prod) => prod.id === productId));
+        })
+        .catch(err => console.log(err));      
+    }, []);
     
     return (
         <>
-            <ItemDetail producto={producto} />        
+            <ItemDetail product={product} />        
         </>
     );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

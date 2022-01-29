@@ -7,7 +7,6 @@ const Item = ({key,nombre,precio,imag,categoria}) => {
     }
 
     return (
-        
         <div 
             key={key}
             className='col-md-4'
