@@ -1,32 +1,35 @@
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount";
 
 
-const Item = ({key,nombre,precio,imag,categoria}) => {
+const Item = ({id,nombre,precio,imag,categoria}) => {
     function onAdd(cant) {
         console.log(cant)
     }
 
     return (
-        <div 
-            key={key}
-            className='col-md-4'
-        >                        
-            <div className="card w-100 mt-5" >
-                <div className="card-header">
-                    {`${nombre} - ${categoria}`}
-                </div>
-                <div className="card-body">
-                    <img src={imag} alt='' className='w-50' />
-                    {precio}                                                            
-                </div>
-                <div className="card-footer">
+        <Card
+            key={id}
+            className='m-1'
+        >
+            <Card.Img variant="top" src={imag}/>
+            <Card.Body>
+            <Card.Title>{categoria} / {nombre}</Card.Title>
+            <Card.Text>
+                Descripcion<br />
+                ${precio}
+            </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+                <Link to={`/detail/${id}`}>
                     <button className="btn btn-outline-primary btn-block">
-                        Detalle del producto
+                        Ver detalle
                     </button> 
-                    <ItemCount stock={10} initial={1} onAdd={onAdd} />                                                             
-                </div>
-            </div>         
-        </div>
+                </Link>
+                    <ItemCount stock={10} initial={1} onAdd={onAdd} />  
+            </Card.Footer>
+        </Card>                     
     )
 };
 

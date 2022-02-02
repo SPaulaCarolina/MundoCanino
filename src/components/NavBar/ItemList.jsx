@@ -1,18 +1,20 @@
+import { CardGroup } from "react-bootstrap";
 import Item from "./Item";
 
 const ItemList = ({list}) => {
     
     return (
-        <div>
-            {list.map((items) => <Item 
-                    key={items.id} 
-                    nombre={items.nombre} 
-                    precio={items.precio} 
-                    imag={items.foto} 
-                    categoria={items.categoria}
+        <CardGroup>
+            {list.map( item => <Item 
+                    id={item.id}
+                    nombre={item.nombre} 
+                    precio={item.precio} 
+                    imag={item.foto} 
+                    categoria={item.categoria}
                     />)
-            }          
-        </div>
+            }        
+        </CardGroup>  
+        
     )
 };
 
