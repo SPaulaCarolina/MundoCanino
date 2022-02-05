@@ -1,8 +1,12 @@
+import { useState } from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({product}) => {
+  const [counter, setCounter] = useState(0);
   function onAdd(cant) {
-    console.log(cant)
+    setCounter(cant)
   }
     return (
       <div>
@@ -13,7 +17,20 @@ const ItemDetail = ({product}) => {
           <img src= {product.foto} alt="foto" />
         </div>
         <div className="mt-2">
-          <ItemCount stock={10} initial={1} onAdd={onAdd} /> 
+          {
+            counter === 0 ?
+            <ItemCount stock={3} initial={1} onAdd={onAdd} /> 
+            :
+            <div>
+              <Link to='/'>
+                <Button>Seguir Comprando</Button>
+              </Link>
+              <Link to='/cart'>
+                <Button>Terminar Compra</Button>
+              </Link>
+            </div>
+          }
+          
         </div>
       </div>  
     );
