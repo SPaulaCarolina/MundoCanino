@@ -1,13 +1,8 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount";
-
 
 const Item = ({id,nombre,precio,imag,categoria}) => {
-    function onAdd(cant) {
-        console.log(cant)
-    }
-
+    
     return (
         <Card
             key={id}
@@ -26,8 +21,7 @@ const Item = ({id,nombre,precio,imag,categoria}) => {
                     <button className="btn btn-outline-primary btn-block">
                         Ver detalle
                     </button> 
-                </Link>
-                    <ItemCount stock={10} initial={1} onAdd={onAdd} />  
+                </Link> 
             </Card.Footer>
         </Card>                     
     )
