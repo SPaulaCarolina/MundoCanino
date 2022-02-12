@@ -4,10 +4,10 @@ import ItemCount from "./ItemCount";
 import { useCartContext } from "../context/CartContext";
 
 const ItemDetail = ({product}) => {
-  const {cartList, add} = useCartContext();
+  const {cartList, addItem} = useCartContext();
   
   function onAdd(cant) {
-    add( {...product, cantidad: cant} )
+    addItem( {element: product, cantidad: cant} )
   }
   console.log(cartList)
     return (
@@ -22,7 +22,7 @@ const ItemDetail = ({product}) => {
             <ItemCount stock={3} initial={1} onAdd={onAdd} /> 
             <div>
               <Link to='/cart'>
-                <Button>Terminar Compra</Button>
+                <Button className="btn btn-outline-info">Terminar Compra</Button>
               </Link>
             </div>
         </div>

@@ -18,7 +18,7 @@ const Item = ({id,nombre,precio,imag,categoria}) => {
             </Card.Body>
             <Card.Footer>
                 <Link to={`/detail/${id}`}>
-                    <button className="btn btn-outline-primary btn-block">
+                    <button className="btn btn-info btn-block">
                         Ver detalle
                     </button> 
                 </Link> 

@@ -3,8 +3,11 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import CartWidget from "../CartWidget/CartWidget"
 import { Link, NavLink } from "react-router-dom"
+import { useCartContext } from "../../context/CartContext"
+import { Badge } from "react-bootstrap"
 
 const NavBar = () => {
+    const { cantidad } = useCartContext()
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -34,7 +37,10 @@ const NavBar = () => {
                 </Nav>
                 </Navbar.Collapse>
             </Container>
-            <CartWidget />
+            <Link to='/cart'>
+                <Badge>{ cantidad() !== 0 && cantidad()}</Badge>
+                <CartWidget />                        
+                    </Link>  
         </Navbar>
     )
 }

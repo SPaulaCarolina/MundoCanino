@@ -4,10 +4,10 @@ import imag from './carrito.png'
 const CartWidget = () => {
     return (
         <Link to='/cart'>
-            <div>
+            <button className='btn btn-outline-info'>
                 <img src={imag} alt='carrito' className='w-5' />
                 Mi Carrito
-            </div>
+            </button>
         </Link>   
     )
 }
