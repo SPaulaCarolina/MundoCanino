@@ -1,19 +1,18 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Item = ({id,nombre,precio,imag,categoria}) => {
+const Item = ({id,name,price,image,category,description}) => {
     
     return (
         <Card
             key={id}
             className='m-1'
         >
-            <Card.Img variant="top" src={imag}/>
+            <Card.Img variant="top" src={image}/>
             <Card.Body>
-            <Card.Title>{categoria} / {nombre}</Card.Title>
+            <Card.Title>{category} / {name}</Card.Title>
             <Card.Text>
-                Descripcion<br />
-                ${precio}
+                ${price}
             </Card.Text>
             </Card.Body>
             <Card.Footer>

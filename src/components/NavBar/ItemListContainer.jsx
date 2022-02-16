@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { useParams } from "react-router-dom"
-import getProducts from '../helpers/getProducts.js'
 import ItemList from "./ItemList"
 
 const ItemListContainer = () => {
@@ -9,21 +9,24 @@ const ItemListContainer = () => {
 
     const { idCategory } = useParams()
 
-
     useEffect(() => { 
-        if(idCategory) {
-            getProducts()
-            .then(res => setList(res.filter(item => item.categoria===idCategory)))
-            .catch(err => console.log(err))
-            .finally(()=> setloading(false))   
-        } else {
-            getProducts()
-            .then(res => setList(res))
-            .catch(err => console.log(err))  
-            .finally(()=> setloading(false))     
-        }            
+        const db = getFirestore()
+        const queryCollection = collection(db, 'products')        
+        const queryFilter = !idCategory ? 
+            queryCollection                
+            : 
+            query(queryCollection, 
+                where('category', '==', idCategory)    
+            )    
+        getDocs(queryFilter)
+        .then(res => setList( res.docs.map(product => ( { id: product.id, ...product.data() } )  ) ))
+        .catch((err) => console.log(err))
+        .finally(() => setloading(false))          
     }, [idCategory]);
 
+        /*const itemRef = doc(db, 'products')
+        getDoc(itemRef)
+        */
     return (
         <>
             { loading ? <h2>Cargando ...</h2> :

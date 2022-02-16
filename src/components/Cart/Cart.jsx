@@ -26,7 +26,7 @@ const Cart = () => {
           </div>
         }
       </div>
-      <button onClick={removeCart} className="btn-block btn btn-info" >Vaciar Carrito</button>
+      <button onClick={removeCart} className="btn-block btn btn-outline-info" >Vaciar Carrito</button>
     </div>
   )
 };

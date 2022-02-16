@@ -7,10 +7,11 @@ const ItemList = ({list}) => {
         <CardGroup>
             {list.map( item => <Item 
                     id={item.id}
-                    nombre={item.nombre} 
-                    precio={item.precio} 
-                    imag={item.foto} 
-                    categoria={item.categoria}
+                    name={item.name} 
+                    price={item.price} 
+                    image={item.image} 
+                    category={item.category}
+                    description={item.description}
                     />)
             }        
         </CardGroup>  

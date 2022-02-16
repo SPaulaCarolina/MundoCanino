@@ -13,16 +13,17 @@ const ItemDetail = ({product}) => {
     return (
       <div>
         <div>
-          <h1>Producto: {product.nombre}</h1>
-          <h4>Id: {product.id} Categoria: {product.categoria}</h4>
-          <h4>Precio: ${product.precio}</h4>
-          <img src= {product.foto} alt="foto" />
+          <h1>Producto: {product.name}</h1>
+          <h4>Categoria: {product.category}</h4>
+          <p>{product.description}</p>
+          <h4>Precio: ${product.price}</h4>
+          <img src= {product.image} alt="foto" />
         </div>
         <div className="mt-2">
             <ItemCount stock={3} initial={1} onAdd={onAdd} /> 
             <div>
               <Link to='/cart'>
-                <Button className="btn btn-outline-info">Terminar Compra</Button>
+                <Button variant='outline-info'>Terminar Compra</Button>
               </Link>
             </div>
         </div>

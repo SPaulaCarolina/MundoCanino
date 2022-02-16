@@ -30,8 +30,8 @@ const NavBar = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <NavLink to={`/category/Alimentos`}>ALIMENTOS BALANCEADOS</NavLink>
-                    <NavLink to={`/category/salud`}>SALUD E HIGIENE</NavLink>
+                    <NavLink to={`/category/Balanceados`}>ALIMENTOS BALANCEADOS</NavLink>
+                    <NavLink to={`/category/Salud`}>SALUD E HIGIENE</NavLink>
                     <Nav.Link href="#action3">ENTRETENIMIENTO</Nav.Link>
                     <Nav.Link href="#action4">ACCESORIOS</Nav.Link>
                 </Nav>
