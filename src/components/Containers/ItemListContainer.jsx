@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { useParams } from "react-router-dom"
-import ItemList from "./ItemList"
+import ItemList from "../ItemList/ItemList"
 
 const ItemListContainer = () => {
     const [list, setList] = useState ([]);
     const [loading, setloading] = useState(true)
-
     const { idCategory } = useParams()
 
     useEffect(() => { 
@@ -24,14 +23,12 @@ const ItemListContainer = () => {
         .finally(() => setloading(false))          
     }, [idCategory]);
 
-        /*const itemRef = doc(db, 'products')
-        getDoc(itemRef)
-        */
     return (
         <>
             { loading ? <h2>Cargando ...</h2> :
                 <ItemList list={list} />
             }
+            <p>2022	&copy; Copyright MundoCanino. Todos los derechos reservados</p>
         </>
     )
 }

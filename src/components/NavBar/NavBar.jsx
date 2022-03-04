@@ -1,46 +1,52 @@
 import Navbar from "react-bootstrap/Navbar"
-import Container from "react-bootstrap/Container"
-import Nav from "react-bootstrap/Nav"
+import { Button, Container, Form, FormControl, Nav } from "react-bootstrap"
 import CartWidget from "../CartWidget/CartWidget"
 import { Link, NavLink } from "react-router-dom"
-import { useCartContext } from "../../context/CartContext"
-import { Badge } from "react-bootstrap"
+import './NavBar.css'
 
 const NavBar = () => {
-    const { cantidad } = useCartContext()
+
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" variant="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#home" class="brand">
+                <Navbar.Brand href="#home" className="w-25">
                     <img
-                    alt="logo"
-                    src="/assets/images/logo.png"
-                    width="30"
-                    height="30"
-                    className="d-inline-block align-top w-25"
-                    />{' '}
-                    <Link to='/'>
+                        alt="logo"
+                        src="/assets/images/logo.png"
+                        width="40"
+                        height="35"
+                        className="d-inline-block align-top"
+                    />{''}
+                    <NavLink to='/' className="d-inline-block align-top nav-link">
                         MundoCanino
-                    </Link>
+                    </NavLink>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
-                <Nav
-                    className="me-auto my-2 my-lg-0"
-                    style={{ maxHeight: '100px' }}
-                    navbarScroll
-                >
-                    <NavLink to={`/category/Balanceados`}>ALIMENTOS BALANCEADOS</NavLink>
-                    <NavLink to={`/category/Salud`}>SALUD E HIGIENE</NavLink>
-                    <Nav.Link href="#action3">ENTRETENIMIENTO</Nav.Link>
-                    <Nav.Link href="#action4">ACCESORIOS</Nav.Link>
-                </Nav>
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <NavLink to={`/category/Balanceados`} className="nav-link"> ALIMENTOS BALANCEADOS </NavLink>
+                        <NavLink to={`/category/Salud`} className="nav-link"> SALUD E HIGIENE </NavLink>
+                        <NavLink to={`/category/Entretenimiento`} className="nav-link"> ENTRETENIMIENTO </NavLink>
+                        <NavLink to={`/category/Accesorios`} className="nav-link"> ACCESORIOS </NavLink>
+                    </Nav>
                 </Navbar.Collapse>
-            </Container>
-            <Link to='/cart'>
-                <Badge>{ cantidad() !== 0 && cantidad()}</Badge>
-                <CartWidget />                        
-                    </Link>  
+            </Container> 
+            <Form className="d-flex w-25">
+                <Link to='/cart' className="">
+                    <CartWidget />                        
+                </Link> 
+                <FormControl
+                    type="search"
+                    placeholder="Search"
+                    className="m-1"
+                    aria-label="Search"
+                />
+                <Button variant="outline-success" size="sm" className="m-1">Buscar</Button>
+            </Form>
         </Navbar>
     )
 }

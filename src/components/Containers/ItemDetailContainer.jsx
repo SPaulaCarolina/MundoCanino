@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
-import ItemDetail from './ItemDetail'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState([])
@@ -23,7 +23,8 @@ const ItemDetailContainer = () => {
                 <h2>Cargando ...</h2>
             :         
                 <ItemDetail product={product} />  
-            }      
+            }  
+            <p>2022	&copy; Copyright MundoCanino. Todos los derechos reservados</p>    
         </>
     );
 }

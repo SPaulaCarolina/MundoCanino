@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Item = ({id,name,price,image,category,description}) => {
@@ -10,16 +10,16 @@ const Item = ({id,name,price,image,category,description}) => {
         >
             <Card.Img variant="top" src={image}/>
             <Card.Body>
-            <Card.Title>{category} / {name}</Card.Title>
+            <Card.Title>{category} | {name}</Card.Title>
             <Card.Text>
                 ${price}
             </Card.Text>
             </Card.Body>
             <Card.Footer>
                 <Link to={`/detail/${id}`}>
-                    <button className="btn btn-info btn-block">
+                    <Button variant="outline-secondary">
                         Ver detalle
-                    </button> 
+                    </Button> 
                 </Link> 
             </Card.Footer>
         </Card>                     
