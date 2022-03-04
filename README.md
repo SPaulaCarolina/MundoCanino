@@ -1,3 +1,16 @@
+Mundo Canino e-commerce app.
+DEMO https://jolly-swanson-e0c2ee.netlify.app/
+
+ABOUT THIS
+
+Plataforma de compra online de productos para mascotas desarrollada en React Js v17.0.2.
+
+Este proyecto utiliza Firebase v9.6.6 como base de datos provisoria.
+
+Se aplican los estilos de Bootstrap v5.1.3 y React-bootstrap v2.1.1. 
+
+Se implementa el enrutamiento mediante React-router-dom v6.2.1.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

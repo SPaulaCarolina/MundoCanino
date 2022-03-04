@@ -1,1 +1,0 @@
-App Ecommerce de productos para mascotas.
